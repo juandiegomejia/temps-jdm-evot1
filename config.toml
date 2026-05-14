@@ -1,0 +1,22 @@
+[machine]
+name        = "EVOT1"
+friendly    = "JDM EVO-T1"
+lhm_url     = "http://127.0.0.1:8085/data.json"
+
+[collection]
+interval_minutes = 60        # Task Scheduler should match this
+
+[thresholds]
+# Alert triggered when value exceeds these for any reading
+cpu_temp_warn  = 85          # °C
+cpu_temp_crit  = 95          # °C
+gpu_temp_warn  = 80          # °C
+gpu_temp_crit  = 90          # °C
+drive_temp_warn = 50         # °C
+drive_temp_crit = 60         # °C
+
+[report]
+# Components to include in report (substring match on LHM sensor names)
+cpu_keywords   = ["CPU Package", "CPU CCD", "Core #"]
+gpu_keywords   = ["GPU Core", "GPU Hot Spot", "GPU Memory"]
+drive_keywords = ["SSD", "NVMe", "HDD", "Drive"]

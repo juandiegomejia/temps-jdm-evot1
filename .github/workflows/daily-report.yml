@@ -1,0 +1,74 @@
+name: Daily Temperature Report
+
+on:
+  schedule:
+    # 06:00 UTC = 01:00 Colombia (UTC-5) — well after 23:58 local push
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to generate report for (YYYY-MM-DD, default: yesterday)'
+        required: false
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate report
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            TARGET="${{ github.event.inputs.date }}"
+          else
+            TARGET=$(date -u -d 'yesterday' '+%Y-%m-%d')
+          fi
+
+          LOG="logs/${TARGET}.csv"
+
+          if [ ! -f "$LOG" ]; then
+            echo "No log found for ${TARGET}, trying most recent available..."
+            LATEST=$(ls logs/*.csv 2>/dev/null | sort | tail -1)
+            if [ -z "$LATEST" ]; then
+              echo "No CSV logs found in logs/ — skipping report generation."
+              exit 0
+            fi
+            TARGET=$(basename "$LATEST" .csv)
+            echo "Using ${TARGET}"
+          fi
+
+          python report.py "$TARGET"
+          echo "REPORT_DATE=${TARGET}" >> "$GITHUB_ENV"
+
+      - name: Upload report artifact
+        if: env.REPORT_DATE != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: temperature-report-${{ env.REPORT_DATE }}
+          path: reports/${{ env.REPORT_DATE }}.html
+          retention-days: 30
+
+      - name: Commit report
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No new report to commit."
+          else
+            git commit -m "report: daily HTML report ${REPORT_DATE}"
+            git push
+          fi
