@@ -44,6 +44,7 @@ jobs:
             LATEST=$(ls logs/*.csv 2>/dev/null | sort | tail -1)
             if [ -z "$LATEST" ]; then
               echo "No CSV logs found in logs/ — skipping report generation."
+              echo "REPORT_DATE=" >> "$GITHUB_ENV"
               exit 0
             fi
             TARGET=$(basename "$LATEST" .csv)
@@ -62,6 +63,7 @@ jobs:
           retention-days: 30
 
       - name: Commit report
+        if: env.REPORT_DATE != ''
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
