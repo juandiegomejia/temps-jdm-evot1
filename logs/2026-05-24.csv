@@ -204,3 +204,208 @@ timestamp,component,hardware,sensor_type,value,min,max
 2026-05-24T07:36:17,Data Downloaded,Sensor,,0.1,0.0,0.1
 2026-05-24T07:36:17,Upload Speed,Sensor,,0.2,0.0,588.4
 2026-05-24T07:36:17,Download Speed,Sensor,,0.1,0.0,15.6
+2026-05-24T08:05:21,CPU Core,Sensor,Voltage,0.0,0.0,1.123
+2026-05-24T08:05:21,P-Core #1,Sensor,Voltage,0.686,0.651,1.339
+2026-05-24T08:05:21,P-Core #2,Sensor,Voltage,0.683,0.661,1.289
+2026-05-24T08:05:21,E-Core #1,Sensor,Voltage,0.615,0.608,1.13
+2026-05-24T08:05:21,E-Core #2,Sensor,Voltage,0.615,0.608,1.13
+2026-05-24T08:05:21,E-Core #3,Sensor,Voltage,0.615,0.608,1.13
+2026-05-24T08:05:21,E-Core #4,Sensor,Voltage,0.615,0.608,1.13
+2026-05-24T08:05:21,E-Core #5,Sensor,Voltage,0.618,0.613,1.118
+2026-05-24T08:05:21,E-Core #6,Sensor,Voltage,0.618,0.61,1.118
+2026-05-24T08:05:21,E-Core #7,Sensor,Voltage,0.618,0.61,1.118
+2026-05-24T08:05:21,E-Core #8,Sensor,Voltage,0.618,0.61,1.118
+2026-05-24T08:05:21,P-Core #3,Sensor,Voltage,0.683,0.666,1.311
+2026-05-24T08:05:21,P-Core #4,Sensor,Voltage,1.023,0.661,1.314
+2026-05-24T08:05:21,P-Core #5,Sensor,Voltage,0.683,0.663,1.299
+2026-05-24T08:05:21,P-Core #6,Sensor,Voltage,1.159,0.663,1.284
+2026-05-24T08:05:21,CPU Package,Sensor,Power,11.4,6.3,54.0
+2026-05-24T08:05:21,CPU Cores,Sensor,Power,4.4,0.6,46.4
+2026-05-24T08:05:21,CPU Memory,Sensor,Power,0.0,0.0,0.0
+2026-05-24T08:05:21,CPU Platform,Sensor,Power,0.3,0.3,0.3
+2026-05-24T08:05:21,Bus Speed,Sensor,Clock,99.6,99.6,99.6
+2026-05-24T08:05:21,P-Core #1,Sensor,Clock,1793.4,797.1,5380.2
+2026-05-24T08:05:21,P-Core #2,Sensor,Clock,1793.4,398.5,5380.2
+2026-05-24T08:05:21,E-Core #1,Sensor,Clock,1494.5,398.5,4483.5
+2026-05-24T08:05:21,E-Core #2,Sensor,Clock,1494.5,398.5,4483.5
+2026-05-24T08:05:21,E-Core #3,Sensor,Clock,1494.5,896.7,4483.5
+2026-05-24T08:05:21,E-Core #4,Sensor,Clock,1494.5,896.7,4483.5
+2026-05-24T08:05:21,E-Core #5,Sensor,Clock,1494.5,697.4,4483.5
+2026-05-24T08:05:21,E-Core #6,Sensor,Clock,1494.5,398.5,4483.5
+2026-05-24T08:05:21,E-Core #7,Sensor,Clock,1494.5,1295.2,4483.5
+2026-05-24T08:05:21,E-Core #8,Sensor,Clock,1494.5,996.3,4483.5
+2026-05-24T08:05:21,P-Core #3,Sensor,Clock,4184.6,398.5,5380.2
+2026-05-24T08:05:21,P-Core #4,Sensor,Clock,1494.5,398.5,5380.2
+2026-05-24T08:05:21,P-Core #5,Sensor,Clock,1793.4,398.5,5380.2
+2026-05-24T08:05:21,P-Core #6,Sensor,Clock,1594.1,398.5,5380.2
+2026-05-24T08:05:21,E-Core #9,Sensor,Clock,1096.0,398.5,2490.8
+2026-05-24T08:05:21,E-Core #10,Sensor,Clock,1096.0,398.5,2490.8
+2026-05-24T08:05:21,Core Max,Sensor,Temperature,46.0,42.0,102.0
+2026-05-24T08:05:21,Core Average,Sensor,Temperature,44.0,40.1,63.8
+2026-05-24T08:05:21,P-Core #1,Sensor,Temperature,44.0,40.0,98.0
+2026-05-24T08:05:21,P-Core #2,Sensor,Temperature,44.0,40.0,82.0
+2026-05-24T08:05:21,E-Core #1,Sensor,Temperature,44.0,38.0,66.0
+2026-05-24T08:05:21,E-Core #2,Sensor,Temperature,44.0,38.0,64.0
+2026-05-24T08:05:21,E-Core #3,Sensor,Temperature,44.0,40.0,64.0
+2026-05-24T08:05:21,E-Core #4,Sensor,Temperature,44.0,40.0,66.0
+2026-05-24T08:05:21,E-Core #5,Sensor,Temperature,44.0,40.0,62.0
+2026-05-24T08:05:21,E-Core #6,Sensor,Temperature,44.0,40.0,62.0
+2026-05-24T08:05:21,E-Core #7,Sensor,Temperature,44.0,40.0,62.0
+2026-05-24T08:05:21,E-Core #8,Sensor,Temperature,44.0,40.0,62.0
+2026-05-24T08:05:21,P-Core #3,Sensor,Temperature,46.0,40.0,90.0
+2026-05-24T08:05:21,P-Core #4,Sensor,Temperature,46.0,40.0,88.0
+2026-05-24T08:05:21,P-Core #5,Sensor,Temperature,46.0,42.0,98.0
+2026-05-24T08:05:21,P-Core #6,Sensor,Temperature,46.0,40.0,102.0
+2026-05-24T08:05:21,E-Core #9,Sensor,Temperature,40.0,35.0,47.0
+2026-05-24T08:05:21,E-Core #10,Sensor,Temperature,40.0,35.0,47.0
+2026-05-24T08:05:21,CPU Package,Sensor,Temperature,47.0,42.0,101.0
+2026-05-24T08:05:21,P-Core #1 Distance to TjMax,Sensor,Temperature,61.0,7.0,65.0
+2026-05-24T08:05:21,P-Core #2 Distance to TjMax,Sensor,Temperature,61.0,23.0,65.0
+2026-05-24T08:05:21,E-Core #1 Distance to TjMax,Sensor,Temperature,61.0,39.0,67.0
+2026-05-24T08:05:21,E-Core #2 Distance to TjMax,Sensor,Temperature,61.0,41.0,67.0
+2026-05-24T08:05:21,E-Core #3 Distance to TjMax,Sensor,Temperature,61.0,41.0,65.0
+2026-05-24T08:05:21,E-Core #4 Distance to TjMax,Sensor,Temperature,61.0,39.0,65.0
+2026-05-24T08:05:21,E-Core #5 Distance to TjMax,Sensor,Temperature,61.0,43.0,65.0
+2026-05-24T08:05:21,E-Core #6 Distance to TjMax,Sensor,Temperature,61.0,43.0,65.0
+2026-05-24T08:05:21,E-Core #7 Distance to TjMax,Sensor,Temperature,61.0,43.0,65.0
+2026-05-24T08:05:21,E-Core #8 Distance to TjMax,Sensor,Temperature,61.0,43.0,65.0
+2026-05-24T08:05:21,P-Core #3 Distance to TjMax,Sensor,Temperature,59.0,15.0,65.0
+2026-05-24T08:05:21,P-Core #4 Distance to TjMax,Sensor,Temperature,59.0,17.0,65.0
+2026-05-24T08:05:21,P-Core #5 Distance to TjMax,Sensor,Temperature,59.0,7.0,63.0
+2026-05-24T08:05:21,P-Core #6 Distance to TjMax,Sensor,Temperature,59.0,3.0,65.0
+2026-05-24T08:05:21,E-Core #9 Distance to TjMax,Sensor,Temperature,65.0,58.0,70.0
+2026-05-24T08:05:21,E-Core #10 Distance to TjMax,Sensor,Temperature,65.0,58.0,70.0
+2026-05-24T08:05:21,CPU Total,Sensor,Load,5.3,0.1,86.8
+2026-05-24T08:05:21,CPU Core Max,Sensor,Load,23.3,1.6,100.0
+2026-05-24T08:05:21,CPU Core #1,Sensor,Load,1.5,0.0,98.5
+2026-05-24T08:05:21,CPU Core #2,Sensor,Load,1.6,0.0,100.0
+2026-05-24T08:05:21,CPU Core #3,Sensor,Load,0.0,0.0,100.0
+2026-05-24T08:05:21,CPU Core #4,Sensor,Load,1.6,0.0,98.5
+2026-05-24T08:05:21,CPU Core #5,Sensor,Load,0.0,0.0,100.0
+2026-05-24T08:05:21,CPU Core #6,Sensor,Load,0.0,0.0,98.5
+2026-05-24T08:05:21,CPU Core #7,Sensor,Load,1.6,0.0,100.0
+2026-05-24T08:05:21,CPU Core #8,Sensor,Load,3.1,0.0,100.0
+2026-05-24T08:05:21,CPU Core #9,Sensor,Load,0.0,0.0,98.5
+2026-05-24T08:05:21,CPU Core #10,Sensor,Load,1.6,0.0,100.0
+2026-05-24T08:05:21,CPU Core #11,Sensor,Load,4.6,0.0,100.0
+2026-05-24T08:05:21,CPU Core #12,Sensor,Load,21.5,0.0,98.5
+2026-05-24T08:05:21,CPU Core #13,Sensor,Load,23.3,0.0,98.5
+2026-05-24T08:05:21,CPU Core #14,Sensor,Load,22.2,0.0,98.5
+2026-05-24T08:05:21,CPU Core #15,Sensor,Load,1.6,0.0,1.6
+2026-05-24T08:05:21,CPU Core #16,Sensor,Load,0.0,0.0,3.0
+2026-05-24T08:05:21,Memory,Sensor,Load,18.2,8.8,18.6
+2026-05-24T08:05:21,Memory Used,Sensor,,12.3,5.9,12.6
+2026-05-24T08:05:21,Memory Available,Sensor,,55.2,54.9,61.6
+2026-05-24T08:05:21,Memory,Sensor,Load,19.8,9.6,20.2
+2026-05-24T08:05:21,Memory Used,Sensor,,12.6,6.1,12.8
+2026-05-24T08:05:21,Memory Available,Sensor,,50.9,50.7,57.4
+2026-05-24T08:05:21,DIMM #0,Sensor,Temperature,36.5,28.5,37.8
+2026-05-24T08:05:21,Temperature Sensor Resolution,Sensor,Temperature,0.3,0.3,0.3
+2026-05-24T08:05:21,Thermal Sensor Low Limit,Sensor,Temperature,0.0,0.0,0.0
+2026-05-24T08:05:21,Thermal Sensor High Limit,Sensor,Temperature,55.0,55.0,55.0
+2026-05-24T08:05:21,Thermal Sensor Critical Low Limit,Sensor,Temperature,0.0,0.0,0.0
+2026-05-24T08:05:21,Thermal Sensor Critical High Limit,Sensor,Temperature,85.0,85.0,85.0
+2026-05-24T08:05:21,Capacity,Sensor,,64.0,64.0,64.0
+2026-05-24T08:05:21,tCKAVGmin (Minimum Cycle Time),Sensor,,0.357,0.357,0.357
+2026-05-24T08:05:21,tCKAVGmax (Maximum Cycle Time),Sensor,,1.01,1.01,1.01
+2026-05-24T08:05:21,tAA (CAS Latency Time),Sensor,,16.0,16.0,16.0
+2026-05-24T08:05:21,tRCD (RAS to CAS Delay Time),Sensor,,16.0,16.0,16.0
+2026-05-24T08:05:21,tRP (Row Precharge Delay Time),Sensor,,16.0,16.0,16.0
+2026-05-24T08:05:21,tRAS (Active to Precharge Delay Time),Sensor,,32.0,32.0,32.0
+2026-05-24T08:05:21,tRC (Active to Active/Refresh Delay Time),Sensor,,48.0,48.0,48.0
+2026-05-24T08:05:21,tWR (Write Recovery Time),Sensor,,30.0,30.0,30.0
+2026-05-24T08:05:21,tRFC1 (Normal Refresh Recovery Time),Sensor,,295.0,295.0,295.0
+2026-05-24T08:05:21,tRFC2 (Fine Granularity Refresh Recovery Time),Sensor,,160.0,160.0,160.0
+2026-05-24T08:05:21,tRFCsb (Same Bank Refresh Recovery Time),Sensor,,130.0,130.0,130.0
+2026-05-24T08:05:21,tRFC1_dlr (Normal Refresh Recovery Time 3DS),Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,tRFC2_dlr (Fine Granularity Refresh Recovery Time 3DS),Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,tRFCsb_dlr (Same Bank Refresh Recovery Time 3DS),Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,DIMM #2,Sensor,Temperature,38.0,28.8,40.0
+2026-05-24T08:05:21,Temperature Sensor Resolution,Sensor,Temperature,0.3,0.3,0.3
+2026-05-24T08:05:21,Thermal Sensor Low Limit,Sensor,Temperature,0.0,0.0,0.0
+2026-05-24T08:05:21,Thermal Sensor High Limit,Sensor,Temperature,55.0,55.0,55.0
+2026-05-24T08:05:21,Thermal Sensor Critical Low Limit,Sensor,Temperature,0.0,0.0,0.0
+2026-05-24T08:05:21,Thermal Sensor Critical High Limit,Sensor,Temperature,85.0,85.0,85.0
+2026-05-24T08:05:21,Capacity,Sensor,,64.0,64.0,64.0
+2026-05-24T08:05:21,tCKAVGmin (Minimum Cycle Time),Sensor,,0.357,0.357,0.357
+2026-05-24T08:05:21,tCKAVGmax (Maximum Cycle Time),Sensor,,1.01,1.01,1.01
+2026-05-24T08:05:21,tAA (CAS Latency Time),Sensor,,16.0,16.0,16.0
+2026-05-24T08:05:21,tRCD (RAS to CAS Delay Time),Sensor,,16.0,16.0,16.0
+2026-05-24T08:05:21,tRP (Row Precharge Delay Time),Sensor,,16.0,16.0,16.0
+2026-05-24T08:05:21,tRAS (Active to Precharge Delay Time),Sensor,,32.0,32.0,32.0
+2026-05-24T08:05:21,tRC (Active to Active/Refresh Delay Time),Sensor,,48.0,48.0,48.0
+2026-05-24T08:05:21,tWR (Write Recovery Time),Sensor,,30.0,30.0,30.0
+2026-05-24T08:05:21,tRFC1 (Normal Refresh Recovery Time),Sensor,,295.0,295.0,295.0
+2026-05-24T08:05:21,tRFC2 (Fine Granularity Refresh Recovery Time),Sensor,,160.0,160.0,160.0
+2026-05-24T08:05:21,tRFCsb (Same Bank Refresh Recovery Time),Sensor,,130.0,130.0,130.0
+2026-05-24T08:05:21,tRFC1_dlr (Normal Refresh Recovery Time 3DS),Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,tRFC2_dlr (Fine Granularity Refresh Recovery Time 3DS),Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,tRFCsb_dlr (Same Bank Refresh Recovery Time 3DS),Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,GPU Power,Sensor,Power,0.0,0.0,0.4
+2026-05-24T08:05:21,GPU Core,Sensor,Clock,250.0,100.0,2350.0
+2026-05-24T08:05:21,D3D ,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D ,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D ,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D ,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D ,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D ,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D 3D,Sensor,Load,0.2,0.0,13.3
+2026-05-24T08:05:21,D3D Compute,Sensor,Load,0.0,0.0,0.8
+2026-05-24T08:05:21,D3D Copy,Sensor,Load,0.0,0.0,1.7
+2026-05-24T08:05:21,D3D GSC,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D Video Decode,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D Video Decode,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D Video Processing,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,D3D Shared Memory Used,Sensor,,918.2,275.2,937.7
+2026-05-24T08:05:21,D3D Shared Memory Free,Sensor,,36164.4,36144.9,36807.4
+2026-05-24T08:05:21,D3D Shared Memory Total,Sensor,,37082.6,37082.6,37082.6
+2026-05-24T08:05:21,Composite Temperature,Sensor,Temperature,34.0,0.0,37.0
+2026-05-24T08:05:21,Temperature #2,Sensor,Temperature,60.9,0.0,60.9
+2026-05-24T08:05:21,Warning Temperature,Sensor,Temperature,74.0,0.0,74.0
+2026-05-24T08:05:21,Critical Temperature,Sensor,Temperature,79.0,0.0,79.0
+2026-05-24T08:05:21,Used Space,Sensor,Load,21.5,21.5,21.6
+2026-05-24T08:05:21,Read Activity,Sensor,Load,0.0,0.0,100.0
+2026-05-24T08:05:21,Write Activity,Sensor,Load,0.1,0.0,59.9
+2026-05-24T08:05:21,Total Activity,Sensor,Load,0.0,0.0,100.0
+2026-05-24T08:05:21,Life,Sensor,Load,100.0,0.0,100.0
+2026-05-24T08:05:21,Available Spare,Sensor,Load,100.0,0.0,100.0
+2026-05-24T08:05:21,Available Spare Threshold,Sensor,Load,10.0,0.0,10.0
+2026-05-24T08:05:21,Percentage Used,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,Power On Count,Sensor,,32.0,0.0,32.0
+2026-05-24T08:05:21,Power On Hours,Sensor,,25.0,0.0,25.0
+2026-05-24T08:05:21,Data Read,Sensor,,403.0,0.0,403.0
+2026-05-24T08:05:21,Data Written,Sensor,,568.0,0.0,568.0
+2026-05-24T08:05:21,Free Space,Sensor,,784.9,784.5,785.4
+2026-05-24T08:05:21,Total Space,Sensor,,1000.2,1000.2,1000.2
+2026-05-24T08:05:21,Read Rate,Sensor,,0.0,0.0,382.8
+2026-05-24T08:05:21,Write Rate,Sensor,,12.2,0.0,252.7
+2026-05-24T08:05:21,Network Utilization,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Uploaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Downloaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Upload Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Download Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Network Utilization,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Uploaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Downloaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Upload Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Download Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Network Utilization,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Uploaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Downloaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Upload Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Download Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Network Utilization,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Uploaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Downloaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Upload Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Download Speed,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Network Utilization,Sensor,Load,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Uploaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Downloaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Upload Speed,Sensor,,0.3,0.0,9.1
+2026-05-24T08:05:21,Download Speed,Sensor,,0.0,0.0,0.8
+2026-05-24T08:05:21,Network Utilization,Sensor,Load,0.1,0.0,22.4
+2026-05-24T08:05:21,Data Uploaded,Sensor,,0.0,0.0,0.0
+2026-05-24T08:05:21,Data Downloaded,Sensor,,0.1,0.0,0.1
+2026-05-24T08:05:21,Upload Speed,Sensor,,72.8,0.0,588.4
+2026-05-24T08:05:21,Download Speed,Sensor,,5.1,0.0,15.6
