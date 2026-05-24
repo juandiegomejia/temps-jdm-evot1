@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware Report — 2026-05-24 — JDM EVO-T1</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          background: #0f1117; color: #e0e0e0; padding: 24px; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; color: #fff; }
+  .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 24px; }
+  .cards { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .card { background: #1a1d27; border-radius: 8px; padding: 16px 20px; flex: 1; min-width: 140px; }
+  .card .num { font-size: 2rem; font-weight: 700; }
+  .card .lbl { font-size: 0.75rem; color: #888; margin-top: 4px; }
+  .num.red { color: #e74c3c; }
+  .num.yellow { color: #f39c12; }
+  .num.green { color: #2ecc71; }
+  .chart-box { background: #1a1d27; border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+  .chart-box h2 { font-size: 1rem; margin-bottom: 16px; color: #aaa; }
+  table { width: 100%; border-collapse: collapse; background: #1a1d27;
+           border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
+  th { background: #23273a; padding: 10px 14px; text-align: left;
+        font-size: 0.75rem; color: #888; text-transform: uppercase; }
+  td { padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid #23273a; }
+  tr.warn-row td { background: #2a2200; }
+  tr.crit-row td { background: #2a0a0a; }
+  .badge { padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+  .badge.ok { background: #1a3a1a; color: #2ecc71; }
+  .badge.warn { background: #3a2a00; color: #f39c12; }
+  .badge.crit { background: #3a0a0a; color: #e74c3c; }
+  .cat { padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+  .cat-cpu { background: #1a2a3a; color: #3498db; }
+  .cat-gpu { background: #2a1a3a; color: #9b59b6; }
+  .cat-drive { background: #1a3a2a; color: #2ecc71; }
+  .cat-other { background: #2a2a2a; color: #888; }
+  .alert-box { background: #2a1500; border: 1px solid #f39c12; border-radius: 8px;
+                padding: 16px 20px; margin-bottom: 24px; }
+  .alert-box h3 { color: #f39c12; margin-bottom: 10px; }
+  .alert-box ul { padding-left: 20px; font-size: 0.85rem; line-height: 1.8; }
+  .ok-box { background: #0a2a0a; border-color: #2ecc71; }
+  .ok-box h3 { color: #2ecc71; }
+  .footer { color: #444; font-size: 0.75rem; text-align: center; margin-top: 32px; }
+</style>
+</head>
+<body>
+<h1>Hardware Temperature Report</h1>
+<div class="subtitle">JDM EVO-T1 &nbsp;·&nbsp; 2026-05-24 &nbsp;·&nbsp; 410 readings</div>
+
+<div class="cards">
+  <div class="card"><div class="num green">0</div><div class="lbl">Critical alerts</div></div>
+  <div class="card"><div class="num green">0</div><div class="lbl">Warnings</div></div>
+  <div class="card"><div class="num">46</div><div class="lbl">Sensors tracked</div></div>
+  <div class="card"><div class="num">8</div><div class="lbl">Snapshots</div></div>
+</div>
+
+<div class="alert-box ok-box"><h3>✓ No threshold alerts</h3></div>
+
+<div class="chart-box">
+  <h2>Temperature Timeline</h2>
+  <canvas id="tempChart" height="80"></canvas>
+</div>
+
+<table>
+  <thead><tr>
+    <th>Component</th><th>Type</th><th>Min</th><th>Avg</th><th>Max</th><th>Readings</th><th>Status</th>
+  </tr></thead>
+  <tbody>
+        <tr class="">
+            <td>CPU Package</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>47.0°C</td>
+            <td>56.0°C</td>
+            <td>65.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Composite Temperature</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>34.0°C</td>
+            <td>34.0°C</td>
+            <td>34.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Core Average</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>44.0°C</td>
+            <td>48.5°C</td>
+            <td>53.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Core Max</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>46.0°C</td>
+            <td>56.0°C</td>
+            <td>66.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Critical Temperature</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>79.0°C</td>
+            <td>79.0°C</td>
+            <td>79.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>DIMM #0</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>36.5°C</td>
+            <td>36.8°C</td>
+            <td>37.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>DIMM #2</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>38.0°C</td>
+            <td>38.6°C</td>
+            <td>39.3°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #1</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>48.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #1 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>57.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #10</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>40.0°C</td>
+            <td>43.0°C</td>
+            <td>46.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #10 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>59.0°C</td>
+            <td>62.0°C</td>
+            <td>65.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #2</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>48.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #2 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>57.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #3</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>48.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #3 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>57.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #4</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>48.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #4 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>57.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #5</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>47.0°C</td>
+            <td>50.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #5 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>55.0°C</td>
+            <td>58.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #6</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>47.0°C</td>
+            <td>50.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #6 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>55.0°C</td>
+            <td>58.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #7</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>47.0°C</td>
+            <td>50.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #7 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>55.0°C</td>
+            <td>58.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #8</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>48.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #8 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>57.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #9</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>40.0°C</td>
+            <td>43.0°C</td>
+            <td>46.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>E-Core #9 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>59.0°C</td>
+            <td>62.0°C</td>
+            <td>65.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #1</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>55.0°C</td>
+            <td>66.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #1 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>39.0°C</td>
+            <td>50.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #2</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>44.0°C</td>
+            <td>50.0°C</td>
+            <td>56.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #2 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>49.0°C</td>
+            <td>55.0°C</td>
+            <td>61.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #3</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>46.0°C</td>
+            <td>49.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #3 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>56.0°C</td>
+            <td>59.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #4</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>46.0°C</td>
+            <td>51.0°C</td>
+            <td>56.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #4 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>49.0°C</td>
+            <td>54.0°C</td>
+            <td>59.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #5</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>46.0°C</td>
+            <td>49.0°C</td>
+            <td>52.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #5 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>53.0°C</td>
+            <td>56.0°C</td>
+            <td>59.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #6</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>46.0°C</td>
+            <td>55.0°C</td>
+            <td>64.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>P-Core #6 Distance to TjMax</td>
+            <td><span class="cat cat-cpu">CPU</span></td>
+            <td>41.0°C</td>
+            <td>50.0°C</td>
+            <td>59.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Temperature #2</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>60.9°C</td>
+            <td>60.9°C</td>
+            <td>60.9°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Temperature Sensor Resolution</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>0.3°C</td>
+            <td>0.3°C</td>
+            <td>0.3°C</td>
+            <td>4</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Thermal Sensor Critical High Limit</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>85.0°C</td>
+            <td>85.0°C</td>
+            <td>85.0°C</td>
+            <td>4</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Thermal Sensor Critical Low Limit</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>0.0°C</td>
+            <td>0.0°C</td>
+            <td>0.0°C</td>
+            <td>4</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Thermal Sensor High Limit</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>55.0°C</td>
+            <td>55.0°C</td>
+            <td>55.0°C</td>
+            <td>4</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Thermal Sensor Low Limit</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>0.0°C</td>
+            <td>0.0°C</td>
+            <td>0.0°C</td>
+            <td>4</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr>
+        <tr class="">
+            <td>Warning Temperature</td>
+            <td><span class="cat cat-other">Other</span></td>
+            <td>74.0°C</td>
+            <td>74.0°C</td>
+            <td>74.0°C</td>
+            <td>2</td>
+            <td><span class="badge ok">OK</span></td>
+        </tr></tbody>
+</table>
+
+<div class="footer">Generated 2026-05-24 13:09 · temps-jdm-laptop</div>
+
+<script>
+new Chart(document.getElementById('tempChart'), {
+  type: 'line',
+  data: {
+    labels: ["07:36", "08:05"],
+    datasets: [{"label": "CPU Package", "data": [65.0, 47.0], "borderColor": "#e74c3c", "backgroundColor": "#e74c3c22", "tension": 0.3, "pointRadius": 3}, {"label": "Composite Temperature", "data": [34.0, 34.0], "borderColor": "#3498db", "backgroundColor": "#3498db22", "tension": 0.3, "pointRadius": 3}, {"label": "Core Average", "data": [53.0, 44.0], "borderColor": "#2ecc71", "backgroundColor": "#2ecc7122", "tension": 0.3, "pointRadius": 3}, {"label": "Core Max", "data": [66.0, 46.0], "borderColor": "#f39c12", "backgroundColor": "#f39c1222", "tension": 0.3, "pointRadius": 3}, {"label": "Critical Temperature", "data": [79.0, 79.0], "borderColor": "#9b59b6", "backgroundColor": "#9b59b622", "tension": 0.3, "pointRadius": 3}, {"label": "DIMM #0", "data": [37.0, 36.5], "borderColor": "#1abc9c", "backgroundColor": "#1abc9c22", "tension": 0.3, "pointRadius": 3}, {"label": "DIMM #2", "data": [39.3, 38.0], "borderColor": "#e67e22", "backgroundColor": "#e67e2222", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #1", "data": [52.0, 44.0], "borderColor": "#34495e", "backgroundColor": "#34495e22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #1 Distance to TjMax", "data": [53.0, 61.0], "borderColor": "#e91e63", "backgroundColor": "#e91e6322", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #10", "data": [46.0, 40.0], "borderColor": "#00bcd4", "backgroundColor": "#00bcd422", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #10 Distance to TjMax", "data": [59.0, 65.0], "borderColor": "#e74c3c", "backgroundColor": "#e74c3c22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #2", "data": [52.0, 44.0], "borderColor": "#3498db", "backgroundColor": "#3498db22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #2 Distance to TjMax", "data": [53.0, 61.0], "borderColor": "#2ecc71", "backgroundColor": "#2ecc7122", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #3", "data": [52.0, 44.0], "borderColor": "#f39c12", "backgroundColor": "#f39c1222", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #3 Distance to TjMax", "data": [53.0, 61.0], "borderColor": "#9b59b6", "backgroundColor": "#9b59b622", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #4", "data": [52.0, 44.0], "borderColor": "#1abc9c", "backgroundColor": "#1abc9c22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #4 Distance to TjMax", "data": [53.0, 61.0], "borderColor": "#e67e22", "backgroundColor": "#e67e2222", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #5", "data": [50.0, 44.0], "borderColor": "#34495e", "backgroundColor": "#34495e22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #5 Distance to TjMax", "data": [55.0, 61.0], "borderColor": "#e91e63", "backgroundColor": "#e91e6322", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #6", "data": [50.0, 44.0], "borderColor": "#00bcd4", "backgroundColor": "#00bcd422", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #6 Distance to TjMax", "data": [55.0, 61.0], "borderColor": "#e74c3c", "backgroundColor": "#e74c3c22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #7", "data": [50.0, 44.0], "borderColor": "#3498db", "backgroundColor": "#3498db22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #7 Distance to TjMax", "data": [55.0, 61.0], "borderColor": "#2ecc71", "backgroundColor": "#2ecc7122", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #8", "data": [52.0, 44.0], "borderColor": "#f39c12", "backgroundColor": "#f39c1222", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #8 Distance to TjMax", "data": [53.0, 61.0], "borderColor": "#9b59b6", "backgroundColor": "#9b59b622", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #9", "data": [46.0, 40.0], "borderColor": "#1abc9c", "backgroundColor": "#1abc9c22", "tension": 0.3, "pointRadius": 3}, {"label": "E-Core #9 Distance to TjMax", "data": [59.0, 65.0], "borderColor": "#e67e22", "backgroundColor": "#e67e2222", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #1", "data": [66.0, 44.0], "borderColor": "#34495e", "backgroundColor": "#34495e22", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #1 Distance to TjMax", "data": [39.0, 61.0], "borderColor": "#e91e63", "backgroundColor": "#e91e6322", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #2", "data": [56.0, 44.0], "borderColor": "#00bcd4", "backgroundColor": "#00bcd422", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #2 Distance to TjMax", "data": [49.0, 61.0], "borderColor": "#e74c3c", "backgroundColor": "#e74c3c22", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #3", "data": [52.0, 46.0], "borderColor": "#3498db", "backgroundColor": "#3498db22", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #3 Distance to TjMax", "data": [53.0, 59.0], "borderColor": "#2ecc71", "backgroundColor": "#2ecc7122", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #4", "data": [56.0, 46.0], "borderColor": "#f39c12", "backgroundColor": "#f39c1222", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #4 Distance to TjMax", "data": [49.0, 59.0], "borderColor": "#9b59b6", "backgroundColor": "#9b59b622", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #5", "data": [52.0, 46.0], "borderColor": "#1abc9c", "backgroundColor": "#1abc9c22", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #5 Distance to TjMax", "data": [53.0, 59.0], "borderColor": "#e67e22", "backgroundColor": "#e67e2222", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #6", "data": [64.0, 46.0], "borderColor": "#34495e", "backgroundColor": "#34495e22", "tension": 0.3, "pointRadius": 3}, {"label": "P-Core #6 Distance to TjMax", "data": [41.0, 59.0], "borderColor": "#e91e63", "backgroundColor": "#e91e6322", "tension": 0.3, "pointRadius": 3}, {"label": "Temperature #2", "data": [60.9, 60.9], "borderColor": "#00bcd4", "backgroundColor": "#00bcd422", "tension": 0.3, "pointRadius": 3}, {"label": "Temperature Sensor Resolution", "data": [0.3, 0.3, 0.3, 0.3], "borderColor": "#e74c3c", "backgroundColor": "#e74c3c22", "tension": 0.3, "pointRadius": 3}, {"label": "Thermal Sensor Critical High Limit", "data": [85.0, 85.0, 85.0, 85.0], "borderColor": "#3498db", "backgroundColor": "#3498db22", "tension": 0.3, "pointRadius": 3}, {"label": "Thermal Sensor Critical Low Limit", "data": [0.0, 0.0, 0.0, 0.0], "borderColor": "#2ecc71", "backgroundColor": "#2ecc7122", "tension": 0.3, "pointRadius": 3}, {"label": "Thermal Sensor High Limit", "data": [55.0, 55.0, 55.0, 55.0], "borderColor": "#f39c12", "backgroundColor": "#f39c1222", "tension": 0.3, "pointRadius": 3}, {"label": "Thermal Sensor Low Limit", "data": [0.0, 0.0, 0.0, 0.0], "borderColor": "#9b59b6", "backgroundColor": "#9b59b622", "tension": 0.3, "pointRadius": 3}, {"label": "Warning Temperature", "data": [74.0, 74.0], "borderColor": "#1abc9c", "backgroundColor": "#1abc9c22", "tension": 0.3, "pointRadius": 3}]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { labels: { color: '#aaa', font: { size: 11 } } },
+      tooltip: { backgroundColor: '#1a1d27', titleColor: '#fff', bodyColor: '#ccc' }
+    },
+    scales: {
+      x: { ticks: { color: '#666' }, grid: { color: '#1e2030' } },
+      y: {
+        ticks: { color: '#666', callback: v => v + '°C' },
+        grid: { color: '#1e2030' },
+        title: { display: true, text: 'Temperature (°C)', color: '#666' }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
